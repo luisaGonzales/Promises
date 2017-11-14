@@ -17,10 +17,10 @@ const App = ({items}) =>  {
   return (
     <Grid >
       <Row className="planets">
-        <Col smOffset={2} sm={6}>
-          <div className="planets__title">
+        <Col smOffset={2} sm={8}>
+          <div className="planets__title text-center">
             <h1>Exoplanet Explorer</h1>
-            <p>Lean more about planets around other starts! <br /> All planets with one click! </p>
+            <p>Lean more about planets around other starts! </p>
           </div>
         </Col>
       </Row>
