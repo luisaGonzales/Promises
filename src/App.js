@@ -5,19 +5,23 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import {search, getPlanets} from './Actions';
 import {Planet} from './Planet';
 
+
+
 const App = ({items}) =>  {
+  const allPlanets = items.map((planet) => {
+    return(
+      <Planet name={planet.name} dens={planet.dens} telescope={planet.telescope} img={planet.img} />
+    );
+  })
   return (
     <Grid>
       <Row>
         <Col md={12}>
         <button onClick={() => search()}>holi</button>
-        <button onClick ={() => getPlanets()}>SET ALL</button>
+
           <div>{ items.length!=0 ? 
-            // <div>
-            //   <h1>{items[0].name}</h1>
-            //   <h1>{items[0].dens}</h1>
-            //   <h1>{items[0].telescope}</h1></div>  
-            <Planet name={items[0].name} dens={items[0].dens} telescope={items[0].telescope} img={items[0].img} />
+            {allPlanets}
+            // <Planet name={items[0].name} dens={items[0].dens} telescope={items[0].telescope} img={items[0].img} />
                   :
                   <br/>
                 }

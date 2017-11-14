@@ -6,27 +6,51 @@ export async function getPlanets() {
         .then(res => res.json())
         .then(res => {
             const results = res.results;
+            store.setState({
+                allResults : results
+            })
         });
 }
 
+getPlanets();
 
 
 export async function search () {
-    const url = "data/Kepler-22b.json"
-    fetch(url)
-        .then(res => res.json())
-        .then(res => {
-            let items = [...store.getState().items];
-            let newPlanet = items.concat({
-                name : res.pl_name,
-                dens : res.pl_dens,
-                telescope : res.pl_telescope,
-                img : res.img
-            });
-            store.setState({
-                items : newPlanet
-            });
-        })
+    console.log(1 , store.getState().allResults);
+    const allResults = [...store.getState().allResults];
+    allResults.map((url) => {
+        return (
+            fetch(url)
+            .then(res => res.json())
+            .then(res => {
+                let items = [...store.getState().items];
+                let newPlanet = items.concat({
+                    name : res.pl_name,
+                    dens : res.pl_dens,
+                    telescope : res.pl_telescope,
+                    img : res.img
+                });
+                store.setState({
+                    items : newPlanet
+                });
+            })
+        );
+    })
+    // const url = "data/Kepler-22b.json"
+    // fetch(url)
+    //     .then(res => res.json())
+    //     .then(res => {
+    //         let items = [...store.getState().items];
+    //         let newPlanet = items.concat({
+    //             name : res.pl_name,
+    //             dens : res.pl_dens,
+    //             telescope : res.pl_telescope,
+    //             img : res.img
+    //         });
+    //         store.setState({
+    //             items : newPlanet
+    //         });
+    //     })
 }
 
 // export async function search () {

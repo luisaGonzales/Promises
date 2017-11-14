@@ -1,7 +1,8 @@
 import createStore from 'redux-zero';
 
 const initialState = {
-    items : []
+    items : [],
+    allResults : null,
 }
 
 const store = createStore(initialState);
