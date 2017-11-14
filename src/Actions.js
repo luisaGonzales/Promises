@@ -1,5 +1,13 @@
 import store from './Store' 
 
+export async function getPlanets() {
+    const allUrls = "data/earth-like-results.json"
+    fetch(allUrls)
+        .then(res => res.json())
+        .then(res => {
+            const results = res.results;
+        });
+}
 
 
 

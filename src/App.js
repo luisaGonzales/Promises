@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'redux-zero/react';
 import {Grid, Row, Col} from 'react-bootstrap';
-import {search} from './Actions';
+import {search, getPlanets} from './Actions';
 import {Planet} from './Planet';
 
 const App = ({items}) =>  {
@@ -11,6 +11,7 @@ const App = ({items}) =>  {
       <Row>
         <Col md={12}>
         <button onClick={() => search()}>holi</button>
+        <button onClick ={() => getPlanets()}>SET ALL</button>
           <div>{ items.length!=0 ? 
             // <div>
             //   <h1>{items[0].name}</h1>
