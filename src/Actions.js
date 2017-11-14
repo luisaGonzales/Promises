@@ -12,8 +12,8 @@ export async function search () {
             let newPlanet = items.concat({
                 name : res.pl_name,
                 dens : res.pl_dens,
-                telescope : res.pl_telescope
-
+                telescope : res.pl_telescope,
+                img : res.img
             });
             console.log(newPlanet);
             console.log(res)
