@@ -5,8 +5,8 @@ export const Planet = ({name, dens, telescope, img, year}) => {
     return (
         <Grid>
             <Row>
-                <Col smOffset={2} sm={8}>
-                    <Thumbnail src={img} alt="242x200">
+                <Col smOffset={5} sm={5}>
+                    <Thumbnail src={img}>
                         <h3>{name}</h3>
                         <p>{dens}</p>
                         <p>Discovered in {year} with {telescope}</p>

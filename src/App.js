@@ -16,8 +16,10 @@ const App = ({items}) =>  {
   return (
     <Grid>
       <Row>
-        <Col md={12}>
-        <button onClick={() => getPlanets()}>holi</button>
+        <Col sm={12}>
+        </Col>
+        <Col sm={12}>
+        <button onClick={() => getPlanets()}>Search</button>
           <div>{ items.length!=0 ? 
             <ul>{allPlanets}</ul>
                   :
