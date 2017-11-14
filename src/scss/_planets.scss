@@ -1,0 +1,34 @@
+.planets{
+    font-family: $font1;
+    color: $neutro;
+    background-color: $color1;
+    padding: 5vh;
+    h1 &__title{
+        font-size: 1.5em;
+    }
+    &__button {
+        color: $neutro;
+        width: 40%;
+        padding: 3vh;
+        margin-top: 40px;
+        background-color: $color1;
+        border: 2px $neutro solid;
+        &:hover {
+            background-color: $neutro !important;
+            color: $color1 !important;
+            border: 2px $neutro solid;
+        }
+    }
+}
+
+.list{
+    background-color: $color2;
+    font-family: $font1;
+    li {
+        list-style: none;
+    }
+    &__img {
+        margin: 15px auto;
+        width: 50%;
+    }
+}

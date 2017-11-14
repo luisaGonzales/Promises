@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/main.css';
 import {connect} from 'redux-zero/react';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Grid, Row, Col, Button} from 'react-bootstrap';
 import {search, getPlanets} from './Actions';
 import {Planet} from './Planet';
 
@@ -14,12 +14,24 @@ const App = ({items}) =>  {
     );
   })
   return (
-    <Grid>
-      <Row>
-        <Col sm={12}>
+    <Grid >
+      <Row className="planets">
+        <Col smOffset={2} sm={6}>
+          <div className="planets__title">
+            <h1>Exoplanet Explorer</h1>
+            <p>Lean more about planets around other starts! <br /> All planets with one click! </p>
+          </div>
         </Col>
+        <Col sm={4}>
+          <Button 
+            onClick={() => getPlanets()}
+            className="planets__button">
+            SEARCH
+          </Button>
+        </Col>
+      </Row>
+      <Row className="list">
         <Col sm={12}>
-        <button onClick={() => getPlanets()}>Search</button>
           <div>{ items.length!=0 ? 
             <ul>{allPlanets}</ul>
                   :
