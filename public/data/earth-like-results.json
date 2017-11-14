@@ -1,11 +1,11 @@
 {
 	"query": "earth-like planets",
 	"results": [
-		"./Kepler-22b.json",
-		"./Kepler-62f.json",
-		"./Kepler-69c.json",
-		"./Kepler-186f.json",
-		"./Kepler-452b.json",
-		"./GJ667Cc.json"
+		"./data/Kepler-22b.json",
+		"./data/Kepler-62f.json",
+		"./data/Kepler-69c.json",
+		"./data/Kepler-186f.json",
+		"./data/Kepler-452b.json",
+		"./data/GJ667Cc.json"
 	]
 }
