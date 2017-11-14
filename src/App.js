@@ -5,23 +5,21 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import {search, getPlanets} from './Actions';
 import {Planet} from './Planet';
 
-
-
 const App = ({items}) =>  {
-  const allPlanets = items.map((planet) => {
+  const allPlanets = items.map((planet, index) => {
     return(
-      <Planet name={planet.name} dens={planet.dens} telescope={planet.telescope} img={planet.img} />
+      <li key={index}>
+        <Planet name={planet.name} dens={planet.dens} telescope={planet.telescope} img={planet.img} year={planet.year} />
+      </li>
     );
   })
   return (
     <Grid>
       <Row>
         <Col md={12}>
-        <button onClick={() => search()}>holi</button>
-
+        <button onClick={() => getPlanets()}>holi</button>
           <div>{ items.length!=0 ? 
-            {allPlanets}
-            // <Planet name={items[0].name} dens={items[0].dens} telescope={items[0].telescope} img={items[0].img} />
+            <ul>{allPlanets}</ul>
                   :
                   <br/>
                 }
