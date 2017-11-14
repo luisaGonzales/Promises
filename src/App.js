@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './css/main.css';
 import {connect} from 'redux-zero/react';
 import {Grid, Row, Col, Button} from 'react-bootstrap';
-import {search, getPlanets} from './Actions';
+import {search} from './Actions';
 import {Planet} from './Planet';
 
 const App = ({items}) =>  {
@@ -13,6 +13,7 @@ const App = ({items}) =>  {
       </li>
     );
   })
+  search();
   return (
     <Grid >
       <Row className="planets">
@@ -21,13 +22,6 @@ const App = ({items}) =>  {
             <h1>Exoplanet Explorer</h1>
             <p>Lean more about planets around other starts! <br /> All planets with one click! </p>
           </div>
-        </Col>
-        <Col sm={4}>
-          <Button 
-            onClick={() => getPlanets()}
-            className="planets__button">
-            SEARCH
-          </Button>
         </Col>
       </Row>
       <Row className="list">
